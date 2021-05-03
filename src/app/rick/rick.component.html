@@ -1,3 +1,52 @@
-<p>rick works!</p>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Menu</p>
+    <p><img src="/src/img/rm.jpg" alt=""></p>
+    <p>Character</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Menu de Filtros
+    </button>
+    <ul *ngIf="showFiller">
+      <li >Genero</li>
+      <li >Especie</li>
+      <li >Estado</li>
+    </ul>
+    <br>
+    <p>Episode</p>
+    <p>Location</p>
+  </mat-drawer>
+<div>
+  <div class="example-sidenav-content">
+    <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
 
 
+  </div>
+</div>
+<div class="main-content" src="src/img/rick-and-morty-bg.jpg">
+    <mat-card class="example-card" *ngFor="let per of personajes">
+      <img mat-card-image src="{{per.image}}" alt="Photo of a Shiba Inu">
+      <mat-card-header>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <mat-card-title class="name"><h1>{{per.name}}</h1></mat-card-title>
+        <mat-card-subtitle class="species">{{per.species}}</mat-card-subtitle>
+      </mat-card-header>
+      <!-- <img mat-card-image src="{{per.image}}" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content>
+        <p>
+          {{per.type}}
+        </p>
+        <p>
+          {{per.gender}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+  <button>Siguiente</button>
+  <button *ngIf="">Back</button>
+
+</mat-drawer-container>
