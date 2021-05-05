@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { PersonajesI } from '../app/modelos/personajes.interface';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { ResI } from '../app/modelos/res.interface'
+import { ResEp, ResI } from '../app/modelos/res.interface'
+import { EpisodeI } from './modelos/episodio.interface';
 // import { get } from 'node:http';
 // import { identifierModuleUrl } from '@angular/compiler';
 
@@ -12,6 +13,8 @@ import { ResI } from '../app/modelos/res.interface'
 export class ServicioService {
 
   url:string = 'https://rickandmortyapi.com/';
+
+
 
 
   constructor(private http:HttpClient) { }
@@ -31,11 +34,31 @@ export class ServicioService {
     return this.http.get<ResI>(getPage)
   }
 
-  getPersonajeById(id: number):Observable<ResI>{
+  getPersonajeById(id: number):Observable<PersonajesI>{
 
     let getById = this.url +"api/character/" + id;
 
-    return this.http.get<ResI>(getById);
+    return this.http.get<PersonajesI>(getById);
 
   }
+
+  getEpisodeByURL(urls: any):Observable<EpisodeI>{
+    console.log(urls);
+    return this.http.get<EpisodeI>(urls);
+  }
+
+  getEpisode():Observable<ResEp>{
+
+    let getAll = 'https://rickandmortyapi.com/api/episode';
+
+    return this.http.get<ResEp>(getAll);
+
+  }
+
+  getCharacterByURL(urls: any):Observable<PersonajesI>{
+    
+    return this.http.get<PersonajesI>(urls);
+  }
+
+
 }

@@ -13,13 +13,16 @@ import { PersonajeComponent } from './personaje/personaje.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { EpisodioComponent } from './episodio/episodio.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RickComponent,
-    PersonajeComponent
+    PersonajeComponent,
+    EpisodioComponent
+    
   ],
   imports: [
     BrowserModule,

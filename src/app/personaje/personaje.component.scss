@@ -18,12 +18,23 @@
   }
   
   .example-card {
-    max-width: 250px;
+    max-width: 80%;
+    max-height: 80%;
     border-style:groove;
     /* margin: auto; */
-    margin-bottom: 5%;
-    margin-left: 5%;
-    margin-top: 1%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-top: 4%;
+    margin-right: 1%;
+    align-self: auto;
+    
+  }
+  .char-photo{
+    max-height: 20%;
+    max-width: 20%;
+    margin-bottom: 10%;
+    margin-left: 0%;
+    margin-top: 15%;
     margin-right: 1%;
     
   }
@@ -42,4 +53,9 @@
    right:0%; 
   }
   
-  
+  table {
+    width: 80%;
+    margin-left: 10%;
+    border-style: solid;
+    margin-bottom: 5%;
+  }

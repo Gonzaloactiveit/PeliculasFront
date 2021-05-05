@@ -1,8 +1,8 @@
-<mat-drawer-container class="example-container" autosize>
+<!-- <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <p>Menu</p>
     <p><img src="/src/img/rm.jpg" alt=""></p>
-    <p>Character</p>
+    <a routerLink="/home"><p>Character</p></a>
     <button (click)="showFiller = !showFiller" mat-raised-button>
       Menu de Filtros
     </button>
@@ -12,7 +12,7 @@
       <li >Estado</li>
     </ul>
     <br>
-    <p>Episode</p>
+    <a routerLink="/episode"><p>Episodios</p></a>
     <p>Location</p>
   </mat-drawer>
 <div>
@@ -23,16 +23,14 @@
 
 
   </div>
-</div>
+</div> -->
 <div class="main-content" src="src/img/rick-and-morty-bg.jpg">
     <mat-card class="example-card" *ngFor="let per of personajes">
-      <img mat-card-image src="{{per.image}}" alt="Photo of a Shiba Inu">
+      <a routerLink="/character/{{per.id}}" routerLinkActive="active"><img mat-card-image src="{{per.image}}" alt="Photo of a Shiba Inu"></a>
       <mat-card-header>
-        <!-- <div mat-card-avatar class="example-header-image"></div> -->
         <mat-card-title class="name"><h1>{{per.name}}</h1></mat-card-title>
         <mat-card-subtitle class="species">{{per.species}}</mat-card-subtitle>
       </mat-card-header>
-      <!-- <img mat-card-image src="{{per.image}}" alt="Photo of a Shiba Inu"> -->
       <mat-card-content>
         <p>
           {{per.type}}
@@ -46,7 +44,7 @@
     </mat-card>
 
   </div>
-  <button>Siguiente</button>
+  <!-- <button>Siguiente</button>
   <button *ngIf="">Back</button>
 
-</mat-drawer-container>
+</mat-drawer-container> -->

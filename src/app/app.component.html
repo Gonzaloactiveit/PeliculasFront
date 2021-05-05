@@ -1,1 +1,39 @@
-<app-rick></app-rick>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p>Menu</p>
+      <p><img src="/src/img/rm.jpg" alt=""></p>
+      <a routerLink="/home"><p>Character</p></a>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Menu de Filtros
+      </button>
+      <ul *ngIf="showFiller">
+        <li >Genero</li>
+        <li >Especie</li>
+        <li >Estado</li>
+      </ul>
+      <br>
+      <a routerLink="/episode"><p>Episodios</p></a>
+      <p>Location</p>
+    </mat-drawer>
+  <div>
+    <div class="example-sidenav-content">
+      <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+  
+  
+    </div>
+  </div>
+  <div class="main-content" src="src/img/rick-and-morty-bg.jpg">
+    <router-outlet></router-outlet>
+  
+    </div>
+    <!-- <button>Siguiente</button>
+    <button *ngIf="">Back</button> -->
+  
+  </mat-drawer-container>
+  
+
+
+
+
