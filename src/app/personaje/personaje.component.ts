@@ -45,7 +45,8 @@ export class PersonajeComponent implements OnInit {
               
               this.api.getEpisodeByURL(e).subscribe(ep =>{
                 this.episodeList.push(ep);
-                this.dataSource.data = this.episodeList.sort((a: any,b: any)=>a-b);
+                this.dataSource.data = this.episodeList.sort(this.sortby('id'));
+                console.log(this.episodeList);
               
                 
               })
@@ -55,6 +56,14 @@ export class PersonajeComponent implements OnInit {
       })
     })
   } 
+ //@ts-ignore
+   sortby(campo){
+     //@ts-ignore
+    return function(a,b){
+      //@ts-ignore
+    return (a[campo] > b[campo]) - (a[campo]< b[campo]);
+    }
+    }
 
   // onGoBack():void{
   //   this.location.back();

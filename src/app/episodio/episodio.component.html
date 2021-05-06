@@ -1,4 +1,4 @@
- <!--<div>  
+ <div>  
     <table mat-table
         [dataSource]="episode" multiTemplateDataRows
         class="mat-elevation-z8">
@@ -18,7 +18,7 @@
             <div class="example-element-name"> {{ep.air_date}} </div>
           </div>
           <div class="example-element-description" >
-              <a><ul><li *ngFor="let lista of listaCharacter"><div class="example-element-name"> {{lista.name}} </div></li></ul></a>
+              <ul><li *ngFor="let lista of listaCharacter"><div class="example-element-name"> <a routerLink="/character/{{lista.id}}" routerLinkActive="active">{{lista.name}}</a> </div></li></ul>
           </div>
         </div>
       </td>
@@ -35,4 +35,4 @@
 
   
 
-</div>  -->
+</div> 

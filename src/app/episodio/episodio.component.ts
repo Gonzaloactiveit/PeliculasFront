@@ -44,7 +44,8 @@ export class EpisodioComponent implements OnInit {
 
       ep.characters.forEach((character: any) =>{
         this.api.getCharacterByURL(character).subscribe(char =>{
-          this.listaCharacter.push({id: char.id, name: char.name});
+          this.listaCharacter.push(char);
+          console.log(this.listaCharacter)
         });
         
       });
@@ -52,5 +53,5 @@ export class EpisodioComponent implements OnInit {
   }
 
   columnsToDisplay: string[] = ['id','name'];
-  // expandedElement: EpisodeI | null;
+  expandedElement: EpisodeI | undefined;
 }

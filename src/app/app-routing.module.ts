@@ -6,6 +6,7 @@ import { RickComponent } from './rick/rick.component';
 
 const routes: Routes = [
   {path: 'home', component: RickComponent},
+  {path: 'home/page/:num', component: RickComponent},
   {path: 'character/:id', component: PersonajeComponent},
   {path: 'episode', component: EpisodioComponent},
   { path: '',   redirectTo: '/home', pathMatch: 'full' }

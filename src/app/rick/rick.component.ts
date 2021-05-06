@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../servicio.service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {PersonajesI} from '../modelos/personajes.interface'
 import {InfoI} from '../modelos/info.interface'
 import{ResI} from '../modelos/res.interface'
@@ -14,11 +14,13 @@ export interface location{
 @Component({
   selector: 'app-rick',
   templateUrl: './rick.component.html',
-  styleUrls: ['./rick.component.css']
+  styleUrls: ['./rick.component.scss']
 })
 export class RickComponent implements OnInit {
 
   personajes: PersonajesI[] = [] ;
+
+  pageNumber: number = 0;
 
   informacion: InfoI[] =[]
   
@@ -26,17 +28,47 @@ export class RickComponent implements OnInit {
 
   listaLocation: location[] = [];
 
+  title = 'Card View';
+  gridColumns = 3;
+  toggleGridColumns() {
+    this.gridColumns = this.gridColumns === 3 ? 4 : 3;
+  }
+
   constructor(private api:ServicioService, private router:Router) { };
 
+  
   ngOnInit(): void {
-    this.api.getPersonaje().subscribe(data =>{
+    this.personajes = [];
+    
+      
+    this.api.getPersonajePagina(this.pageNumber).subscribe(data =>{
       console.log(data);
       this.personajes = data.results;
       this.informacion = data.info;
       // this.listaLocation = this.personajes.location;
       console.log(this.personajes);
     })
+    
+      
+    
+    
   };
+
+  siguientePagina(){
+      this.pageNumber = this.pageNumber + 1;
+      localStorage
+      console.log(this.pageNumber);
+      
+  }
+
+  paginaAnterior(){
+    if(this.pageNumber != 0){
+      this.pageNumber= this.pageNumber -1
+    }
+    else{
+      RouterLink: "/home"
+    }
+  }
 
 
 }
