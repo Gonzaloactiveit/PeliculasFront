@@ -20,7 +20,9 @@ export class RickComponent implements OnInit {
 
   personajes: PersonajesI[] = [] ;
 
-  pageNumber: number = 0;
+  // pageNumber: number = 0;
+
+  pageNumber = JSON.parse(localStorage.getItem('num')!);
 
   informacion: InfoI[] =[]
   
@@ -42,8 +44,9 @@ export class RickComponent implements OnInit {
   ngOnInit(): void {
     this.personajes = [];
     
+    
       
-    this.api.getPersonajePagina(this.pageNumber).subscribe(data =>{
+    this.api.getPersonajePagina(localStorage.getItem('num')!).subscribe(data =>{
       console.log(data);
       this.personajes = data.results;
       this.informacion = data.info;
@@ -58,14 +61,16 @@ export class RickComponent implements OnInit {
 
   siguientePagina(){
       this.pageNumber = this.pageNumber + 1;
-      localStorage
-      console.log(this.pageNumber);
+      localStorage.setItem('num', JSON.stringify(this.pageNumber));
+      console.log(localStorage.getItem('num'));
       
-  }
+  } 
 
   paginaAnterior(){
-    if(this.pageNumber != 0){
+    if(localStorage.getItem('num') != '0'){
       this.pageNumber= this.pageNumber -1
+      localStorage.setItem('num', JSON.stringify(this.pageNumber));
+      console.log(localStorage.getItem('num'));
     }
     else{
       RouterLink: "/home"

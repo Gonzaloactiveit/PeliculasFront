@@ -27,7 +27,7 @@ export class ServicioService {
 
   }
 
-  getPersonajePagina(page: number):Observable<ResI>{
+  getPersonajePagina(page: String):Observable<ResI>{
 
     let getPage = this.url + "api/character/?page="+ page;
 
