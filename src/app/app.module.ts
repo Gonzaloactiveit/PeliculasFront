@@ -14,6 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { EpisodioComponent } from './episodio/episodio.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { EpisodioComponent } from './episodio/episodio.component';
     RickComponent,
     PersonajeComponent,
     EpisodioComponent
-    
+
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,8 @@ import { EpisodioComponent } from './episodio/episodio.component';
     MatPaginatorModule,
     MatSidenavModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    FlexLayoutModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

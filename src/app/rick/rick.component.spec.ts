@@ -19,6 +19,12 @@ describe('RickComponent', () => {
     fixture.detectChanges();
   });
 
+  it(`should have as title 'card-view'`, () => {
+    const fixture = TestBed.createComponent(RickComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('card-view');
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

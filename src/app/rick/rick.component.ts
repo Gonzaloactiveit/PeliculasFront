@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../servicio.service';
 import {Router} from '@angular/router';
-import {PersonajesI} from '../modelos/personajes.interface'
-import {InfoI} from '../modelos/info.interface'
-import{ResI} from '../modelos/res.interface'
+import {PersonajesI} from '../modelos/personajes.interface' ;
+import {InfoI} from '../modelos/info.interface' ;
+import {ResI} from '../modelos/res.interface' ;
 
 export interface location{
   name: String;
@@ -14,17 +14,25 @@ export interface location{
 @Component({
   selector: 'app-rick',
   templateUrl: './rick.component.html',
-  styleUrls: ['./rick.component.css']
+  styleUrls: ['./rick.component.scss']
 })
 export class RickComponent implements OnInit {
 
   personajes: PersonajesI[] = [] ;
 
-  informacion: InfoI[] =[]
-  
+  informacion: InfoI[] =[] ;
+
   showFiller = false;
 
   listaLocation: location[] = [];
+
+  title = 'Card View';
+
+  gridColumns = 3;
+
+  toggleGridColumns() {
+    this.gridColumns = this.gridColumns === 3 ? 4 : 3;
+  }
 
   constructor(private api:ServicioService, private router:Router) { };
 

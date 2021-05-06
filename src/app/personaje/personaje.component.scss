@@ -20,28 +20,31 @@
   .example-card {
     max-width: 80%;
     max-height: 80%;
-    border-style:groove;
+    border-style: groove;
+    background-color: #fff;
     /* margin: auto; */
     margin-bottom: 10%;
     margin-left: 10%;
     margin-top: 4%;
     margin-right: 1%;
     align-self: auto;
-    
+    overflow: hidden;
+    justify-content: space-evenly;
+    transition: all 0.2 ease-in-out;
   }
-  .char-photo{
-    max-height: 20%;
-    max-width: 20%;
-    margin-bottom: 10%;
-    margin-left: 0%;
-    margin-top: 15%;
-    margin-right: 1%;
-    
+
+.char-photo{
+    max-height: 200px;
+    max-width: 200px;
+    margin: 5%;
+    justify-content: left;
   }
   
   .name {
-    font-style: oblique;
-    
+    display: flex;
+
+    max-width: 250px;
+    color: #78B12A;
   }
   /* .example-header-image {
      background-image: url(''); 
