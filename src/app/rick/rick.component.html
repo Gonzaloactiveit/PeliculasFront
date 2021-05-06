@@ -3,14 +3,13 @@
       <a mat-card-image routerLink="/character/{{per.id}}" routerLinkActive="active"><img mat-card-image src="{{per.image}}" alt="Photo of a Shiba Inu"></a>
       <mat-card-header>
         <mat-card-title class="name"><h1>{{per.name}}</h1></mat-card-title>
-        <mat-card-subtitle class="species">{{per.species}}</mat-card-subtitle>
+        <mat-card-subtitle class="species">{{per.species}}<br>{{per.gender}}
+        </mat-card-subtitle>
+
       </mat-card-header>
       <mat-card-content>
         <p>
           {{per.type}}
-        </p>
-        <p>
-          {{per.gender}}
         </p>
       </mat-card-content>
       <mat-card-actions>

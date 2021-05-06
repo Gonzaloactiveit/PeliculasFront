@@ -29,7 +29,9 @@ export class RickComponent implements OnInit {
   listaLocation: location[] = [];
 
   title = 'Card View';
+
   gridColumns = 3;
+
   toggleGridColumns() {
     this.gridColumns = this.gridColumns === 3 ? 4 : 3;
   }

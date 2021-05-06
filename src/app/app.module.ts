@@ -14,8 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { EpisodioComponent } from './episodio/episodio.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -24,7 +23,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     RickComponent,
     PersonajeComponent,
     EpisodioComponent
-    
+
   ],
   imports: [
     BrowserModule,
