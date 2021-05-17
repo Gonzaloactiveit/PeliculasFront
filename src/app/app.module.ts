@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { EpisodioComponent } from './episodio/episodio.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { LocationComponent } from './location/location.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     AppComponent,
     RickComponent,
     PersonajeComponent,
-    EpisodioComponent
+    EpisodioComponent,
+    LocationComponent
 
   ],
   imports: [

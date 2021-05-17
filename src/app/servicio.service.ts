@@ -34,6 +34,13 @@ export class ServicioService {
     return this.http.get<ResI>(getPage)
   }
 
+  getEpisodePagina(page: String):Observable<ResEp>{
+
+    let getPage = this.url + "api/episode/?page="+ page;
+
+    return this.http.get<ResEp>(getPage)
+  }
+
   getPersonajeById(id: number):Observable<PersonajesI>{
 
     let getById = this.url +"api/character/" + id;
