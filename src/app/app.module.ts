@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { EpisodioComponent } from './episodio/episodio.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatChipsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
