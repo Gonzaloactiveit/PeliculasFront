@@ -27,11 +27,18 @@ export class ServicioService {
 
   }
 
-  getPersonajePagina(page: number):Observable<ResI>{
+  getPersonajePagina(page: String):Observable<ResI>{
 
     let getPage = this.url + "api/character/?page="+ page;
 
     return this.http.get<ResI>(getPage)
+  }
+
+  getEpisodePagina(page: String):Observable<ResEp>{
+
+    let getPage = this.url + "api/episode/?page="+ page;
+
+    return this.http.get<ResEp>(getPage)
   }
 
   getPersonajeById(id: number):Observable<PersonajesI>{

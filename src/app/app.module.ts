@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { EpisodioComponent } from './episodio/episodio.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { MatChipsModule } from '@angular/material/chips';
+import { LocationComponent } from './location/location.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatChipsModule } from '@angular/material/chips';
     AppComponent,
     RickComponent,
     PersonajeComponent,
-    EpisodioComponent
+    EpisodioComponent,
+    LocationComponent
 
   ],
   imports: [
