@@ -18,6 +18,7 @@
   }
   
   .example-card {
+    box-sizing: border-box;
     max-width: 80%;
     max-height: 80%;
     border-style: groove;
@@ -33,6 +34,10 @@
     transition: all 0.2 ease-in-out;
   }
 
+  .mat-card>:first-child, .mat-card-content>:first-child {
+    margin-top: 0;
+  }
+
 .char-photo{
     max-height: 200px;
     max-width: 200px;
@@ -42,9 +47,11 @@
   
   .name {
     display: flex;
-
     max-width: 250px;
     color: #78B12A;
+    margin: 0%;
+    box-sizing: border-box;
+    
   }
   /* .example-header-image {
      background-image: url(''); 

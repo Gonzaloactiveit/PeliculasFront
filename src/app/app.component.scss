@@ -30,6 +30,7 @@
   
   .name {
     font-style: oblique;
+    width: fit-content;
     
   }
   /* .example-header-image {
@@ -37,6 +38,10 @@
     background-size: cover; 
   } */
   
+  .mat-form-field {
+    margin-right: 4px;
+  }
+
   .main-content {
    margin: 0%;
    right:0%; 
