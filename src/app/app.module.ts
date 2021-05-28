@@ -17,6 +17,9 @@ import { EpisodioComponent } from './episodio/episodio.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { MatChipsModule } from '@angular/material/chips';
 import { LocationComponent } from './location/location.component';
+import { MatTreeModule } from '@angular/material/tree';
+import { TreeChecklistExample } from './sidenav-tree/sidenav-tree';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { LocationComponent } from './location/location.component';
     RickComponent,
     PersonajeComponent,
     EpisodioComponent,
-    LocationComponent
+    LocationComponent,
+    TreeChecklistExample,
 
   ],
   imports: [
@@ -40,7 +44,9 @@ import { LocationComponent } from './location/location.component';
     MatButtonModule,
     MatIconModule,
     FlexLayoutModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTreeModule,
+    MatCheckboxModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
