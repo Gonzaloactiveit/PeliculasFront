@@ -8,7 +8,7 @@
       <mat-chip-list aria-label="Fish selection">
         <mat-chip color="primary">{{ per.species }}</mat-chip>
         <mat-chip>{{ per.gender }}</mat-chip>
-        <mat-chip>{{ per.type }}</mat-chip>
+        <mat-chip *ngIf="per.type">{{ per.type }}</mat-chip>
       </mat-chip-list>
     </mat-card-content>
     <mat-card-actions>
