@@ -27,12 +27,15 @@ export class EpisodioComponent implements OnInit {
  
   episode: EpisodeI[] = [];
   listaCharacter: Lista[] = [];
+  // localStorage.setItem('numEp',JSON.stringify(1));
+  
   pageNumber = JSON.parse(localStorage.getItem('numEp')!);
 
   constructor(private route:ActivatedRoute, private api:ServicioService) { }
 
   ngOnInit(): void {
     this.episode = [];
+    
     this.api.getEpisodePagina(localStorage.getItem('numEp')!).subscribe(data =>{
       console.log(data);
       this.episode = data.results;
@@ -41,6 +44,8 @@ export class EpisodioComponent implements OnInit {
   }
 
   onClick(ep: any){
+
+    
 
     this.listaCharacter = [];
 
@@ -58,10 +63,17 @@ export class EpisodioComponent implements OnInit {
   expandedElement: EpisodeI | undefined;
 
   siguientePagina(){
-    this.pageNumber = this.pageNumber + 1;
-    localStorage.setItem('numEp', JSON.stringify(this.pageNumber));
-    console.log(localStorage.getItem('numEp'));
-    
+
+    if(this.pageNumber == '0' ){
+      this.pageNumber = this.pageNumber + 2;
+      localStorage.setItem('numEp', JSON.stringify(this.pageNumber));
+      console.log(localStorage.getItem('numEp'));
+    }else{
+      this.pageNumber = this.pageNumber + 1;
+      localStorage.setItem('numEp', JSON.stringify(this.pageNumber));
+      console.log(localStorage.getItem('numEp'));
+    }
+
 } 
 
 paginaAnterior(){

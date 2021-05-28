@@ -44,8 +44,6 @@ export class RickComponent implements OnInit {
   ngOnInit(): void {
     this.personajes = [];
     
-    
-      
     this.api.getPersonajePagina(localStorage.getItem('num')!).subscribe(data =>{
       console.log(data);
       this.personajes = data.results;
@@ -54,15 +52,19 @@ export class RickComponent implements OnInit {
       console.log(this.personajes);
     })
     
-      
-    
-    
   };
 
   siguientePagina(){
+    if(this.pageNumber == '0' ){
+      this.pageNumber = this.pageNumber + 2;
+      localStorage.setItem('num', JSON.stringify(this.pageNumber));
+      console.log(localStorage.getItem('num'));
+    }else{
       this.pageNumber = this.pageNumber + 1;
       localStorage.setItem('num', JSON.stringify(this.pageNumber));
       console.log(localStorage.getItem('num'));
+    }
+      
       
   } 
 

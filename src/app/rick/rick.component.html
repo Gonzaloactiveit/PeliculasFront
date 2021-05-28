@@ -16,7 +16,8 @@
   </mat-card>
 
 </div>
-<button (click)="paginaAnterior()" >Back</button>
-<button (click)="siguientePagina()" META HTTP-EQUIV="REFRESH">Siguiente</button>
-
+<div class="botones">
+  <button mat-fab  class="boton-back" (click)="paginaAnterior()" onclick="location.reload()"><mat-icon class="icono">navigate_before</mat-icon></button>
+  <button mat-fab  class="boton-next" (click)="siguientePagina()" onclick="location.reload()"> <mat-icon class="icono">navigate_next</mat-icon> </button>
+</div>
 
