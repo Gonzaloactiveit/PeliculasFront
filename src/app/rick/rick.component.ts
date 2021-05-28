@@ -55,7 +55,7 @@ export class RickComponent implements OnInit {
   };
 
   siguientePagina(){
-    if(this.pageNumber == '0' ){
+    if(localStorage.getItem('num') == '0' ){
       this.pageNumber = this.pageNumber + 2;
       localStorage.setItem('num', JSON.stringify(this.pageNumber));
       console.log(localStorage.getItem('num'));
